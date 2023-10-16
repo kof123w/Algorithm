@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>F:\GitHubProject\Algorithm\Algorithm\SortLearn\x64\Debug\SortLearn.exe</FullPath>
+      <FullPath>F:\GitHubProject\Algorithm\Algorithm\SortLearn\x64\Release\SortLearn.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

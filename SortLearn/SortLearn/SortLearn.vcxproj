@@ -155,10 +155,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Bubble\BubbleSort.cpp" />
+    <ClCompile Include="Insert\InsertSort.cpp" />
     <ClCompile Include="SortLearn.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bubble\BubbleSort.h" />
+    <ClInclude Include="Insert\InsertSort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
