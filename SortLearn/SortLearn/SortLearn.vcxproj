@@ -156,6 +156,7 @@
   <ItemGroup>
     <ClCompile Include="Bubble\BubbleSort.cpp" />
     <ClCompile Include="Insert\InsertSort.cpp" />
+    <ClCompile Include="Merge\MergeSort.cpp" />
     <ClCompile Include="Quick\QuickSort.cpp" />
     <ClCompile Include="Select\SelectSort.cpp" />
     <ClCompile Include="Shell\ShellSort.cpp" />
@@ -164,6 +165,7 @@
   <ItemGroup>
     <ClInclude Include="Bubble\BubbleSort.h" />
     <ClInclude Include="Insert\InsertSort.h" />
+    <ClInclude Include="Merge\MergeSort.h" />
     <ClInclude Include="Quick\QuickSort.h" />
     <ClInclude Include="Select\SelectSort.h" />
     <ClInclude Include="Shell\ShellSort.h" />

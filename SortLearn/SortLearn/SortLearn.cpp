@@ -1,11 +1,11 @@
 
 #include <iostream>  
-#include "Quick/QuickSort.cpp"
+#include "Merge/MergeSort.cpp"
 using namespace std;
 int main(int argc, char* argv[])
 {
-    QuickSort sort;
-    int arr[] = {8, 9, 1, 7, 2, 3, 5, 4, 11, 0};
+    MergeSort sort;
+    int arr[] = {8, 9, 1, 7, 2};
     
     int size = sizeof(arr) / sizeof(int);
      
