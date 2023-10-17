@@ -1,10 +1,10 @@
 
 #include <iostream>  
-#include "Merge/MergeSort.cpp"
+#include "Heap/HeapSrot.cpp"
 using namespace std;
 int main(int argc, char* argv[])
 {
-    MergeSort sort;
+    HeapSrot sort;
     int arr[] = {8, 9, 1, 7, 2};
     
     int size = sizeof(arr) / sizeof(int);
