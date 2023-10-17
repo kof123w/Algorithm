@@ -1,15 +1,15 @@
 
 #include <iostream>  
-#include "Select/SelectSort.cpp"
+#include "Shell/ShellSort.cpp"
 using namespace std;
 int main(int argc, char* argv[])
 {
-    SelectSort select_sort;
-    int arr[] = {36,3,6,91,2,4}; 
+    ShellSort sort;
+    int arr[] = {8, 9, 1, 7, 2, 3, 5, 4, 11, 0}; 
     int size = sizeof(arr) / sizeof(int);
     
-    select_sort.Sort(arr,size);
+    sort.Sort(arr,size);
     for(auto i : arr)
-        cout << i << endl;
+        cout << i << " ";
     return 0;
 }
