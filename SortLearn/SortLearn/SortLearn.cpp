@@ -1,11 +1,11 @@
 
 #include <iostream>  
-#include "Heap/HeapSrot.cpp"
+#include "Bucket/BucketSort.cpp"
 using namespace std;
 int main(int argc, char* argv[])
 {
-    HeapSrot sort;
-    int arr[] = {8, 9, 1, 7, 2};
+    BucketSort sort;
+    int arr[] = {8, 9, 1, 7, 2,25,10,85,14,32,55};
     
     int size = sizeof(arr) / sizeof(int);
      
