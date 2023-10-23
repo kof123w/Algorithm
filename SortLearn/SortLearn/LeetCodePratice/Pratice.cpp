@@ -1,5 +1,7 @@
 #include "Pratice.h"
 #include <vector>
+#include <unordered_map>
+#include <unordered_set>
 using namespace std;
 
 //leetcode题目 2500.删除每行中的最大值
@@ -49,5 +51,101 @@ public:
 
         return ans;
         
+    }
+};
+
+/**
+给定一个大小为 n 的数组 nums ，返回其中的多数元素。多数元素是指在数组中出现次数 大于 ⌊ n/2 ⌋ 的元素。
+
+你可以假设数组是非空的，并且给定的数组总是存在多数元素。
+ */
+class Majority
+{
+public: 
+    int majorityElement(vector<int>& nums) {
+        unordered_map<int,int> count_map;
+        int maxKey = 0;
+        int maxCount = 0;
+        for(int i = 0;i<nums.size();i++){
+            count_map[nums[i]] += 1; 
+            if(maxCount < count_map[nums[i]])
+            {
+                maxCount = count_map[nums[i]];
+                maxKey = nums[i];
+            }
+        }
+
+        return maxKey;
+    }
+};
+
+/**
+给你一个整数数组 nums 。如果任一值在数组中出现 至少两次 ，返回 true ；如果数组中每个元素互不相同，返回 false 。
+ 
+*/
+class CheckContain
+{
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        unordered_set<int> set;
+        bool ans = false;
+        for(auto num : nums)
+        {
+            if(set.count(num))
+            {
+                ans = true;
+                break;
+            }
+           set.emplace(num);   
+        }
+        return ans;
+    }
+};
+
+class Intersect
+{
+    class Solution {
+    public:
+        vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+            unordered_set<int> set;
+            unordered_set<int> set2;  //去从用
+            vector<int> ans;
+            set.insert(nums1.begin(),nums1.end());
+            int i = 0;
+            for(auto n : nums2)
+            {
+                if(set.count(n) && !set2.count(n))
+                {
+                    ans.insert(ans.begin() + i,n);
+                    i++;
+                }
+            }
+            return ans;
+        }
+    };
+};
+
+class Solution {
+public:
+    void swapPtr(int* a,int *b){
+        int  tmp = *a;
+        *a = *b;
+        *b = tmp;
+    }
+
+    int maxProduct(vector<int>& nums) {
+        int *a = &nums[0],*b = &nums[1];
+        
+        for(int i = 2;i<nums.size();i++){
+            if(nums[i] > *a){
+                swapPtr(a,&nums[i]);
+            }
+
+            if(nums[i]> *b){
+                swapPtr(b,&nums[i]);
+            }
+        }
+
+        return (*a - 1) * (*b - 1);
     }
 };

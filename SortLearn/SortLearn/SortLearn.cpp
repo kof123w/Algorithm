@@ -29,10 +29,13 @@ int main(int argc, char* argv[])
 
     vector<vector<int>> grid ;
     vector<int> grid0 ;
-    grid0.emplace(grid0.begin(),10);
+    grid0.emplace(grid0.begin(),3);
+    grid0.emplace(grid0.begin()+1,4);
+    grid0.emplace(grid0.begin()+2,5);
+    grid0.emplace(grid0.begin()+2,2);
     grid.emplace(grid.begin(),grid0);
-    DeleteMaxValue solution;
-    int ans = solution.deleteGreatestValue(grid);
+    Solution solution;
+    int ans = solution.maxProduct(grid0);
     cout << "答案ans:" << ans << endl;
     return 0;
 }
