@@ -1,5 +1,8 @@
 #include "Pratice.h"
+
+#include <string>
 #include <vector>
+#include <algorithm>
 #include <unordered_map>
 #include <unordered_set>
 using namespace std;
@@ -147,5 +150,97 @@ public:
         }
 
         return (*a - 1) * (*b - 1);
+    }
+};
+
+class  ThreeSumSolution
+{
+public:
+    vector<vector<int>> threeSum(vector<int>& nums) {
+        vector<vector<int>> ans;
+        sort(nums.begin(),nums.end());
+        if(nums[0] > 0){
+            return ans;
+        } 
+        unordered_set<string> set;
+      
+        for(int k = 0;k < nums.size();k++){
+            int i = k + 1,j = nums.size() - 1;
+            int target = -nums[k];
+            while(i<j){
+                if(nums[i] + nums[j] > target){
+                    j--;
+                    continue;
+                }
+
+                if(nums[i] + nums[j] < target){
+                    i++;
+                    continue;
+                }
+          
+                if(nums[i] + nums[j] == target){
+                    string val = to_string(nums[i]) + to_string(nums[j]);
+                    if(set.count(val) <= 0)
+                    {
+                        ans.push_back({nums[k],nums[i],nums[j]});
+                        set.emplace(val);
+                    } 
+                    i++;
+                }
+            }
+            
+        }
+        
+        return ans;
+    }
+};
+
+
+class threeSumClosestSolution {
+public:
+    int threeSumClosest(vector<int>& nums, int target) { 
+        sort(nums.begin(),nums.end()); 
+        int ans = INT32_MAX;
+        auto update = [&](int cur)
+        {
+            if(abs(target - ans) > abs(target - cur)){
+                ans = cur;
+            }
+        };
+        
+        int n = nums.size();  
+        for(int k = 0;k < nums.size() - 2;k++){
+            if(k>0 && nums[k] == nums[k - 1]) continue;
+            int i = k + 1,j = n - 1;
+            while(i<j){
+                while (i>k+1 && i<j && nums[i]==nums[i-1]){
+                    i++;
+                }
+
+                while (j<n-1 && i<j&&nums[j]==nums[j+1]){
+                    j--;
+                }
+
+                if(i>=j) break;
+                
+                int sum = nums[i] + nums[j] + nums[k];
+                if(sum==target)
+                {
+                    return target;
+                } 
+                update(sum); 
+                if(sum>target)
+                {
+                    j--;
+                }
+
+                if(sum < target)
+                {
+                    i++;
+                }
+            }
+        }
+
+        return ans;
     }
 };

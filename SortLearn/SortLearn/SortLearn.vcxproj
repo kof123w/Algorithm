@@ -158,6 +158,7 @@
     <ClCompile Include="Bucket\BucketSort.cpp" />
     <ClCompile Include="Heap\HeapSrot.cpp" />
     <ClCompile Include="Insert\InsertSort.cpp" />
+    <ClCompile Include="LeetCodePratice\MaxString.cpp" />
     <ClCompile Include="LeetCodePratice\Pratice.cpp" />
     <ClCompile Include="Merge\MergeSort.cpp" />
     <ClCompile Include="Quick\QuickSort.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="Bucket\BucketSort.h" />
     <ClInclude Include="Heap\HeapSrot.h" />
     <ClInclude Include="Insert\InsertSort.h" />
+    <ClInclude Include="LeetCodePratice\MaxString.h" />
     <ClInclude Include="LeetCodePratice\Pratice.h" />
     <ClInclude Include="Merge\MergeSort.h" />
     <ClInclude Include="Quick\QuickSort.h" />
