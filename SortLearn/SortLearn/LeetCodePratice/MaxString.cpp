@@ -53,6 +53,16 @@ public:
 
     //排序比较
     bool sortCompere(int &a,int &b){
-        return to_string(a).compare(to_string(b))==-1;
+        long x = 10,y = 10;
+        while (a>=x)
+        {
+            x*=10;
+        }
+
+        while(b>=y)
+        {
+            y*=10;
+        }
+        return b * x + a > a * y + b;
     }
 };
